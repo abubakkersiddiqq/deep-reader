@@ -1,0 +1,32 @@
+langchain_community
+langchain_classic 
+langchain_text_splitters
+langchain_chroma
+langchain_huggingface (sentence-transformer - required to run in local)
+PyPDF - (required to import the document_loader from the coummunity)
+
+functions - rag.py 
+
+ 1. load(file)
+   load the pdf and returns the document
+ 2. chunks(document)
+   chunk the document using langchain_text_splitters
+   returns -> doc_chunks
+ 3. vectorizer(doc_chunks)
+   vectorize the chunks using langchain_chroma and langchain_huggingface
+   returns ->vector db
+ 4. llm()
+   setup for llm
+   return llm 
+ 5. prompt()
+   return prompt
+   
+unpack before assingning
+ 5. rag_chain(llm, prompt)
+   return rag_response by create_stuff and create_retrieval
+ 
+ and two main fuunction
+ def index_document(pdf_path) -> vectordb
+
+# This runs on /ask  
+def get_answer(question) -> str
