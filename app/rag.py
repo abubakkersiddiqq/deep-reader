@@ -84,7 +84,6 @@ def simple_retriever(vector_db, query):
         'lambda_mult': 0.5  
         }
     )
-    retriever_docs = retriever.invoke(query)
 
     return retriever
         
@@ -121,7 +120,7 @@ def index_document(pdf_path):
     vector_db = vectorize(chunks= chunks)
     
     return vector_db
-def get_answer(vector_db, question):
+def get_answer(vector_db, llm, prompt, question):
     
     retriever = vector_db.as_retriever(
     search_type='mmr',
@@ -131,9 +130,6 @@ def get_answer(vector_db, question):
         'lambda_mult': 0.5  
         }
     )
-    # retriever = simple_retriever(vector_db= vector_db, query= question)
-    llm = init_llm(api_key= api_key)
-    prompt = init_prompt()
     
     question_answer_chain = create_stuff_documents_chain(llm= llm, prompt= prompt)
     rag_chain = create_retrieval_chain(retriever, question_answer_chain)
