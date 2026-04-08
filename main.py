@@ -38,9 +38,9 @@ def health_status():
 async def create_upload_file(request: Request, file: UploadFile):
 
     contents = await file.read()
-    with open(f"temp_{file.filename}", "wb") as f:
+    with open(f"data/temp_{file.filename}", "wb") as f:
         f.write(contents)
-    vectorize_docs = index_document(f"temp_{file.filename}")
+    vectorize_docs = index_document(f"data/temp_{file.filename}")
     request.app.state.vector_db = vectorize_docs
     return {"message": "success"}
     
