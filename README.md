@@ -35,5 +35,6 @@ docker run -p 8000:8000 deep-reader
 
 ## Live
 
-🔗 [API on Render](YOUR_RENDER_URL) — note: first request may take
-30-60 seconds (free tier cold start)
+[🔗 DeepReader on Render](https://deepreader.onrender.com)
+
+> ⚠️ First request may take 30–60 seconds (free tier cold start)
