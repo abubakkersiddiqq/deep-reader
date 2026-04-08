@@ -2,12 +2,14 @@ langchain_community
 langchain_classic 
 langchain_text_splitters
 langchain_chroma
-langchain_huggingface (sentence-transformer - required to run in local)
+langchain_huggingface (sentence-transformers - required to run in local)
 PyPDF - (required to import the document_loader from the coummunity)
+langchain_openai
+dotenv
 
 functions - rag.py 
-
- 1. load(file)
+ it's preivew - i'll update later
+ 1. load(file) - clean repeated words like name etc
    load the pdf and returns the document
  2. chunks(document)
    chunk the document using langchain_text_splitters
@@ -21,12 +23,16 @@ functions - rag.py
  5. prompt()
    return prompt
    
-unpack before assingning
- 5. rag_chain(llm, prompt)
-   return rag_response by create_stuff and create_retrieval
+
  
- and two main fuunction
- def index_document(pdf_path) -> vectordb
+Two main fuunction
+/upload
+def index_document(pdf_path) -> vectordb
 
 # This runs on /ask  
 def get_answer(question) -> str
+
+Chroma load from persist_directory langchain
+
+if app.state.vector_db is None:
+    return {"error": "No document uploaded yet"}
