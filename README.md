@@ -33,6 +33,10 @@ docker build -t deep-reader .
 docker run -p 8000:8000 deep-reader
 ```
 
+## Test the API
+
+Visit `https://deepreader.onrender.com/docs` for interactive Swagger UI.
+
 ## Live
 
 [🔗 DeepReader on Render](https://deepreader.onrender.com)
