@@ -1,7 +1,7 @@
 from contextlib import asynccontextmanager
 from fastapi import FastAPI, UploadFile, Request
 from langchain_chroma import Chroma
-from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_community.embeddings import FastEmbedEmbeddings
 from rag import init_llm, init_prompt, get_answer, index_document
 from pydantic import BaseModel
 
@@ -11,7 +11,8 @@ import os
 load_dotenv()
 api_key = os.getenv("OPENAI_API_KEY")
 
-embedding= HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+embedding = FastEmbedEmbeddings(model_name="BAAI/bge-small-en-v1.5")
+
 
 class Question(BaseModel):
     question: str
