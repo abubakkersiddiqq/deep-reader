@@ -2,8 +2,7 @@ from collections import Counter
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_chroma import Chroma
-from langchain_huggingface import HuggingFaceEmbeddings
-
+from langchain_community.embeddings import FastEmbedEmbeddings
 from langchain_classic.chains.combine_documents import create_stuff_documents_chain
 from langchain_classic.chains import create_retrieval_chain
 from langchain_openai import ChatOpenAI
@@ -64,7 +63,7 @@ def chunk(docs: list) -> list:
     return chunks
 
 def vectorize(chunks: list):
-    embedding_function = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+    embedding_function = FastEmbedEmbeddings(model_name="BAAI/bge-small-en-v1.5")
 
     vector_db = Chroma.from_documents(
         documents=chunks, 
