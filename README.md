@@ -37,6 +37,10 @@ docker run -p 8000:8000 deep-reader
 
 Visit `https://deepreader.onrender.com/docs` for interactive Swagger UI.
 
+> 🚧 **Note:** The live link may be down. This project is hosted on Render's
+> free tier (750hr/month limit). If the demo doesn't load, it's likely
+> suspended. Feel free to run it locally using the instructions below.
+
 ## Live
 
 [🔗 DeepReader on Render](https://deepreader.onrender.com)
