@@ -35,14 +35,8 @@ docker run -p 8000:8000 deep-reader
 
 ## Test the API
 
-Visit `https://deepreader.onrender.com/docs` for interactive Swagger UI.
-
-> 🚧 **Note:** The live link may be down. This project is hosted on Render's
-> free tier (750hr/month limit). If the demo doesn't load, it's likely
-> suspended. Feel free to run it locally using the instructions below.
+Visit `https://abubakker66-deepreader.hf.space/docs` for interactive Swagger UI.
 
 ## Live
 
-[🔗 DeepReader on Render](https://deepreader.onrender.com)
-
-> ⚠️ First request may take 30–60 seconds (free tier cold start)
+[🔗 DeepReader on Hugging Face Spaces](https://abubakker66-deepreader.hf.space)
