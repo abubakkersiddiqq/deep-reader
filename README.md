@@ -16,7 +16,7 @@ grounded answers using an LLM.
 - LangChain, ChromaDB
 - HuggingFace Embeddings (all-MiniLM-L6-v2)
 - OpenRouter API (LLM)
-- Docker, Render
+- Docker, Hugging face
 
 ## Endpoints
 
