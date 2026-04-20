@@ -1,6 +1,6 @@
 # DeepReader
 
-A semantic document Q&A API — upload a PDF and ask questions about it.
+A semantic document Q&A API - upload a PDF and ask questions about it.
 The API retrieves relevant context from your document and generates
 grounded answers using an LLM.
 
@@ -14,14 +14,21 @@ grounded answers using an LLM.
 
 - Python, FastAPI
 - LangChain, ChromaDB
-- HuggingFace Embeddings (all-MiniLM-L6-v2)
+- FastEmbed Embeddings (BAAI/bge-small-en-v1.5)
 - OpenRouter API (LLM)
-- Docker, Hugging face
+- Docker, Hugging Face Spaces
 
 ## Endpoints
 
-- `POST /upload` — accepts a PDF, chunks and embeds it into ChromaDB
-- `POST /ask` — accepts a question, retrieves relevant chunks, returns LLM answer
+- `POST /upload` - accepts a PDF, chunks and embeds it into ChromaDB
+- `POST /ask` - accepts a question, retrieves relevant chunks, returns LLM answer
+
+## Live
+
+[DeepReader on Hugging Face Spaces](https://abubakker66-deepreader.hf.space)
+
+No frontend - interact with the API directly via Swagger UI at:
+`https://abubakker66-deepreader.hf.space/docs`
 
 ## Run locally
 
@@ -33,10 +40,4 @@ docker build -t deep-reader .
 docker run -p 8000:8000 deep-reader
 ```
 
-## Test the API
-
-Visit `https://abubakker66-deepreader.hf.space/docs` for interactive Swagger UI.
-
-## Live
-
-[🔗 DeepReader on Hugging Face Spaces](https://abubakker66-deepreader.hf.space)
+Local Swagger UI available at: `http://localhost:8000/docs`
